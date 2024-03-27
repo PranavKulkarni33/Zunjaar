@@ -1,0 +1,51 @@
+.loading-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0; /* Initially set opacity to 0 */
+  }
+  
+  .logo {
+    width: 200px; /* Set a specific width */
+    height: 200px; /* Ensure it's a square to maintain aspect ratio */
+    animation-duration: 1s;
+    animation-name: enterAnimation;
+    animation-fill-mode: forwards; /* Ensure the element retains the styles applied by the last keyframe */
+    position: relative;
+    border-radius: 50%; /* Make it circular */
+    background-color: #FF4500; /* Set the orange-red color */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Add some shadow */
+    /* Add more custom styles as desired */
+  }
+  
+  
+  
+  @keyframes enterAnimation {
+    from {
+      opacity: 0; /* Start with opacity 0 */
+      transform: translateY(100vh); /* Start from the bottom of the screen */
+    }
+    to {
+      opacity: 1; /* Fade in with opacity 1 */
+      transform: translateY(0); /* Move to the middle */
+    }
+  }
+  
+  @keyframes exitAnimation {
+    from {
+      opacity: 1; /* Start with opacity 1 */
+      transform: translateY(0); /* Start from the middle */
+    }
+    to {
+      opacity: 0; /* Fade out with opacity 0 */
+      transform: translateY(-100vh); /* Move upwards out of the screen */
+    }
+  }
+  
